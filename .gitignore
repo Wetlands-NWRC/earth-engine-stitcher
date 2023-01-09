@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# shelled conda-env
+conda-env/
+
+# testing data
+testing_data/
