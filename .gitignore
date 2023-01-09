@@ -130,3 +130,6 @@ dmypy.json
 
 # shelled conda-env
 conda-env/
+
+# testing data
+testing_data/
