@@ -20,7 +20,7 @@ def get_rows(basenames: List[str], pattern: str = None) -> Set:
     pattern = '(\d+)' if pattern is None else pattern
     return set([re.findall(pattern, filename)[-2] for filename in basenames])
 
-def files_by_row(indexs: Set[str], basenames: List[str]) -> Dict[str, str]:
+def files_by_row(indexs: Set[str], basenames: List[str], root: str) -> Dict[str, str]:
     
     cfg = {idx: [] for idx in indexs}
     
@@ -28,7 +28,7 @@ def files_by_row(indexs: Set[str], basenames: List[str]) -> Dict[str, str]:
         for idx in  indexs:
             row = re.findall('(\d+)', name)[-2]
             if idx == row:
-                cfg.get(row).append(name)
+                cfg.get(row).append(os.path.join(root, name))
     return cfg
 
 def raster_factory(buffer: list, filename: str) -> None:
