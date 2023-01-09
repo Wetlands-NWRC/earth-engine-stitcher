@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # shelled conda-env
-./conda-env
+conda-env/
